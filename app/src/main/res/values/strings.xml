@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pandora: Words of Today</string>
+
+    <string name="words_of_today">Words of Today</string>
+
+    <string name="main">Pandora</string>
+
+    <string name="refresh">Refresh</string>
+</resources>
