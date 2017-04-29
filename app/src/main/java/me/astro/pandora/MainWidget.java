@@ -24,9 +24,9 @@ public class MainWidget extends AppWidgetProvider {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, itemIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setPendingIntentTemplate(R.id.list_view, pendingIntent);
 
-        Intent intent1= new Intent(context, RefreshActivity.class);
+        Intent intent1 = new Intent(context, RefreshActivity.class);
         intent1.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        PendingIntent pendingIntent1 = PendingIntent.getActivity(context, 0 , intent1, 0);
+        PendingIntent pendingIntent1 = PendingIntent.getActivity(context, 0, intent1, 0);
 
         views.setOnClickPendingIntent(R.id.refresh, pendingIntent1);
 

@@ -3,6 +3,7 @@ package me.astro.pandora;
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,7 +23,13 @@ public class RefreshActivity extends Activity {
 
     public void refresh(View view) {
         if (appWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
-            Toast.makeText(this, "Refreshing...", Toast.LENGTH_LONG).show();
+            final Activity activity = this;
+            Snackbar.make(view, "Refreshing...", Snackbar.LENGTH_LONG).setAction("OK", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    activity.finish();
+                }
+            }).show();
             try {
                 new RefreshTask(this, AppWidgetManager.getInstance(this), appWidgetId).execute();
             } catch (Exception e) {
