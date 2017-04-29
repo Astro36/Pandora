@@ -58,6 +58,7 @@ class RefreshTask extends AsyncTask<Void, Void, Void> {
             meanings = meanings1;
 
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.list_view);
+            appWidgetManager.updateAppWidget(appWidgetId, views);
         } catch (IOException e) {
             e.printStackTrace();
         }

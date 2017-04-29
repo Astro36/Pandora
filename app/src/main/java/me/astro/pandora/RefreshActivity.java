@@ -2,9 +2,11 @@ package me.astro.pandora;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class RefreshActivity extends Activity {
@@ -14,6 +16,9 @@ public class RefreshActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refresh);
+
+        ImageView imageView = (ImageView) findViewById(R.id.launcher_icon_refresh);
+        imageView.setImageBitmap(BitmapFactory.decodeStream(getResources().openRawResource(R.raw.img_pandora)));
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
